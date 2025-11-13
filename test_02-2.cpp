@@ -9,7 +9,7 @@ int main() {
 
     int unique = 0;
     for (int i = 0; i < limit; i++) {
-        unique ^= arr[i];
+        unique ^= arr[i]; 
     }
 
     cout << "The unique element is: " << unique << endl;
