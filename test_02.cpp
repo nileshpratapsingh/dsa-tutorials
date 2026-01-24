@@ -21,8 +21,8 @@ int main() {
             break;
         }
     }
+    std::cout << "The unique element is: " << unique << '\n';;
+    return 0 ;
 
-    cout << "The unique element is: " << unique << endl;
-    return 0;
 }
 
