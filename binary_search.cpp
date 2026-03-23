@@ -1,24 +1,22 @@
 #include <iostream>
 #include <vector>
+
+using dynm = std::vector<int>;
 using namespace std;
 
 vector<int> merge_sort(vector<int> &arr) {
-    // Base case
     if (arr.size() <= 1) {
         return arr;
     }
 
     size_t mid = arr.size() / 2;
 
-    // Split
     vector<int> left(arr.begin(), arr.begin() + mid);
     vector<int> right(arr.begin() + mid, arr.end());
 
-    // Recursive sort
     left = merge_sort(left);
     right = merge_sort(right);
 
-    // Merge
     vector<int> merged;
     merged.reserve(arr.size());
 
@@ -31,12 +29,12 @@ vector<int> merge_sort(vector<int> &arr) {
         }
     }
 
-    // Remaining elements
     while (i < left.size()) merged.push_back(left[i++]);
     while (j < right.size()) merged.push_back(right[j++]);
 
     return merged;
 }
+
 int binary_search(vector<int> &arr, int key) {
     vector<int> sorted_arr = merge_sort(arr);
 
@@ -102,10 +100,10 @@ int main (){
         -199, 211,   223,   -227,  229,   -233,  239,   -241,  251,    -257,
         263,  -269,  271,   -277,  281,   -283,  293,   -307,  311,    -313};
     int result = binary_search(arr, key);
-    cout << "Key found at index: " << result << endl;
 
-    // if (result != -1)
-    // else
-    //     cout << "Key not found" << endl;
+    if (result != -1)
+        cout << "Key found at index: " << result << endl;
+    else
+        cout << "Key not found" << endl;
 
     return 0;}

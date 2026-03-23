@@ -10,14 +10,15 @@ vector<int> pairSum(vector<int> &arr) {
     for (size_t i = 0; i < arr.size(); i++) {
         for (size_t j = i + 1; j < arr.size(); j++) {
             if (arr[i] + arr[j] == 5) {
-            result.push_back(arr[i]);
-            result.push_back(arr[j]);
-        }
+                result.push_back(arr[i]);
+                result.push_back(arr[j]);
+            }
         }
     }
 
     return result;
 }
+
 int main()
 {
     vector<int> arr = {

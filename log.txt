@@ -1,0 +1,1 @@
+g++ -Wall -Wextra -std=c++17 test_08.cpp -o test_08.exe
